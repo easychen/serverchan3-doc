@@ -1,0 +1,16 @@
+# 更新日志
+
+## 1.0.9版
+
+新增 Action Link。
+
+将链接中的 https 改为 sccallback 用户点击时，APP会填出确认框，并通过底部提示栏直接显示接口返回内容。可用于更便捷地触发api调用。
+
+1. `Method`为`POST`
+1. 动态参数:`{{{sc:user_name}}}`和`{{{sc:user_id}}}`
+
+示例：
+
+```markdown
+[点此发送测试](sccallback://*.push.ft07.com?title=test&uid={{{sc:user_id}}}&name={{{sc:user_name}}}  "确认框显示文案")
+```

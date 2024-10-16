@@ -1,0 +1,10 @@
+a 
+{
+    text-decoration: none !important;
+    padding-bottom: 2px;
+    border-bottom: 1px transparent;
+    &:hover
+    {
+        border-bottom: 1px dotted;
+    }
+}

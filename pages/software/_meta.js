@@ -1,4 +1,4 @@
 export default {
-    checkchan: 'Check酱'
+    webmonitor: '网页监测'
     // sdk: 'SDK'
 }

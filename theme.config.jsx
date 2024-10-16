@@ -20,6 +20,7 @@ export default {
     head: (
         <>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Server酱³ · 文档中心</title>
           <meta property="og:title" content="Server酱³文档中心" />
           <meta property="og:description" content="如何用好Server酱³" />
           <link rel="icon" type="image/png" href="/logo.144.png" />

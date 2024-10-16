@@ -10,4 +10,10 @@ export default {
         collapsed: true,
     },
     // sdk: 'SDK'
+    contact: {
+        title: '返回官网',
+        type: 'page',
+        href: 'https://sc3.ft07.com',
+        newWindow: true
+    }
 }

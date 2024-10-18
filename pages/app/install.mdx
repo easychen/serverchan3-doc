@@ -5,44 +5,56 @@ import { Callout } from 'nextra/components'
 ## 商店安装和手动安装
 
 请进入[官网下载页面](https://sc3.ft07.com/client)：
-- 如果有手机品牌对应的市场，可以点击对应的按钮到市场下载；
-- 如果没有，则直接下载APK手动安装。
+- 如果有手机品牌对应的市场，可以点击对应的按钮到市场下载或者搜索「Server酱」；
+- 如果没有，则直接下载APK后手动安装。
 
 <Callout>
-并不是没有上架市场就不支持无后台推送，类似华为/荣耀/魅族，手动安装也支持
+市场的安装包和直接下载的安装包是完全一致的。一般因为审核问题，市场可能比最新版本晚一两天
 </Callout>
 
 ## 配置
 
-应用需要通知权限，一般情况下，应用会自动申请；但在一些早期机型上可能需要手工开启：
+<Callout type="info">
+推荐使用后台驻留方式，支持所有的Android品牌，信息秒达。
+<br/>后续有省电需求或者老被系统杀后台再采用无后台方式。
+</Callout>
 
-1. 进入应用信息
-1. 进入通知管理
-1. 打开通知（通知栏）
-1. 同页面（一般是最下方）有通道/通知类别的单独设置，名称为「用户私有消息」，进入后可以详细设置
 
-### 驻留后台
+请依次打开以下权限：
 
-本应用支持以下厂商通道：
+- [x] 通知权限，特别是「通知分类」中「用户私有通知」的权限，部分手机可指定提醒方式和声音
+- [x] 通知过滤规则：全部设为重要
+- [x] 后台常驻/锁屏保护
+- [x] 自启动/自动后台
+- [x] 后台弹出界面
+- [x] 应用省电设置：无限制
 
-- iOS：苹果手机
-- FCM：支持FCM推送的手机，注册设备需要海外网络，国内大部分网络可以接受推送
-- 小米：XiaoMi/RedMi
-- 华为：支持Android的华为手机（不支持鸿蒙Next）
-- 荣耀
-- OPPO Push：OPPO、Realme、OnePlus手机
-- vivo Push：vivo、iQOO、NEX手机
-- 魅族
+可以查看以下各个品牌的设置帮助：
 
-在以上设备上不需要驻留后台；但**并不是说没有厂商通道，本应用就无法工作。只需要设置为驻留后台，一样可以工作，甚至比厂商通道更及时**。
+<Callout>
+以下设置帮助为英文，但可直接参考截图
+</Callout>
 
-为使应用可以常驻后台，可能需要开放以下部分或者全部权限：
+- [华为](https://dontkillmyapp.com/huawei)
+- [小米](https://dontkillmyapp.com/xiaomi)
+- [一加](https://dontkillmyapp.com/oneplus)
+- [三星](https://dontkillmyapp.com/samsung)
+- [魅族](https://dontkillmyapp.com/meizu)
+- [OPPO](https://dontkillmyapp.com/oppo)
+- [vivo](https://dontkillmyapp.com/vivo)
+- [RealMe](https://dontkillmyapp.com/realme)
+- [其他](https://dontkillmyapp.com/general)
 
-由于采用后台常驻长连接方式工作，因此需要对应用开放以下权限：
 
-- 通知权限（服务通知渠道）
-- 通知过滤规则：全部设为重要
-- 后台常驻/锁屏保护
-- 自启动
-- 应用省电设置：无限制
+### 无后台推送
 
+当应用不在后台时，只有通过厂商通道才能收到消息。本应用支持以下厂商通道：
+
+- `iOS`：苹果手机
+- `FCM`：支持谷歌推送的手机，注册设备需要海外网络，国内大部分网络可以接受推送
+- `MiPush`：小米、红米系列手机
+- `Push Kit`：华为手机和平板，EMUI 3.0及以上，HMS Core 3.0.0及以上
+- `HONOR Push`：荣耀手机和平板，国内Magic UI 4.0及以上
+- `OPPO Push`：支持 ColorOS3.1及以上的系统的OPPO的机型，一加5/5t及以上机型，realme所有机型
+- `vivo Push`：vivo、iQOO系列手机
+- `Flyme Push`：魅族手机，Flyme系统

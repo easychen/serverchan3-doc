@@ -4,7 +4,7 @@ export default {
     faq: '常见问题',
     app: 'APP',
     server: '服务器端',
-    software: '可用软件',
+    usecase: '可用场景',
     privacy: {
         title: '隐私政策',
         collapsed: true,

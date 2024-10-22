@@ -15,5 +15,6 @@ export default {
         type: 'page',
         href: 'https://sc3.ft07.com',
         newWindow: true
-    }
+    },
+    compatibility: '兼容性'
 }

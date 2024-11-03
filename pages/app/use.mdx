@@ -1,5 +1,7 @@
+import { Callout } from 'nextra/components'
+
 # 用户手册  
-V1.0  
+V1.0.15
 
 ## 1. 登录  
 在使用本应用之前，用户需要进行登录。登录可以通过两种方式进行：手工输入或扫码输入`SendKey`。
@@ -48,6 +50,12 @@ V1.0
 
 ### 基本功能：
 - **Markdown显示**：消息内容支持Markdown格式，允许格式化文本、显示链接、图片等多媒体元素。
+
+<Callout type="info">
+1. Server酱³使用[flutter_markdown<sup>0.7.4</sup>](https://pub.dev/packages/flutter_markdown)渲染Markdown。
+1. 注意在Makrdown中两次回车`\n\n`才是换行。不支持HTML语法，<a href="..."></a> 这种格式是HTML，需要改成Markdown格式。
+1. 可以把HTML发送给AI让其帮你转换。
+</Callout>
 
 ![](../../image/20241016131928.png)
 

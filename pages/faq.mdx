@@ -38,16 +38,34 @@ Server酱³支持多设备，默认情况下会对所有注册过的设备进行
 </details>
 
 <details>
-<summary><strong>Server酱³如何删除消息？</strong></summary>
-按住消息向左滑动，会出现删除按钮，再次点击即可删除。
+<summary><strong>Server酱³如何删除消息？如何一次删除全部消息？</strong></summary>
+1. 按住消息向左滑动，会出现删除按钮，再次点击即可删除单条消息。
+1. 点击消息列表页面右上角的菜单，进入设置页面。在「消息设置」中点击「清除所有客户端+服务器消息」即可
+
 ![](../image/20241103223603.png)
 
 </details>
 
 <details>
+<summary><strong>Server酱³中的「客户端消息」和「服务器消息」是什么？有何不同？</strong></summary>
+1. 这和Server酱³的运行方式有关，消息首先推送达到服务器，并缓存72小时
+1. 然后客户端启动和刷新时，从服务器拉取消息，并保存到本地数据库
+1. 消息列表页面显示的是本地数据库的消息，这样即使不联网，也能浏览历史消息
+1. 设置中的「仅清除客户端消息」点击后，刷新可以从服务器端再次拉取消息；而「清除所有客户端+服务器消息」则同时删除服务器上的缓存消息，其他客户端亦无法拉取
+
+</details>
+
+<details>
+<summary><strong>Server酱³如何选择性的批量删除消息？</strong></summary>
+1. 将不想删除的消息加星。
+1. 点击消息列表页面右上角的菜单，进入设置页面。在「消息设置」中点击「清除所有未加星消息」即可
+
+</details>
+
+<details>
 <summary><strong>Server酱³如何将所有消息标记为已读？</strong></summary>
-点击消息列表页面右上角的菜单，进入设置页面。在「消息设置」中可以看到「全部标记为已读」按钮。
-如果你的设置页面没有此按钮，请升级到[最新版本](https://sc3.ft07.com/client)。
+1. 点击消息列表页面右上角的菜单，进入设置页面。在「消息设置」中可以看到「全部标记为已读」按钮。
+1. 如果你的设置页面没有此按钮，请升级到[最新版本](https://sc3.ft07.com/client)。
 </details>
 
 <details>
@@ -64,8 +82,16 @@ Server酱³支持多设备，默认情况下会对所有注册过的设备进行
 </details>
 
 <details>
-<summary><strong>推送消息是 `desp` 字段采用了Makrdown，消息卡片上无法显示，怎么办？</strong></summary>
-可以通过 `short` 参数指定消息卡片中内容部分显示的具体文字。可参考[API文档](/server/api)中的参数部分。
+<summary><strong>推送消息时 `desp` 参数采用了Makrdown，消息卡片上看起来很乱，怎么办？</strong></summary>
+1. 可以通过 `short` 参数指定消息卡片中内容部分显示的具体文字。
+1. 可参考[API文档](/server/api)中的参数部分。
+</details>
+
+<details>
+<summary><strong>消息Tags如何删除或者编辑？</strong></summary>
+1. 消息Tags由消息包含的标签自动聚合生成
+1. 删除掉全部包含某Tag的消息，Tag即会消失
+1. 同样的，因为来自自动聚合，所以无法手动修改Tag名称
 </details>
 
 

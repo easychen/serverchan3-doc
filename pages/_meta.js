@@ -1,5 +1,6 @@
 export default {
     index: '首页',
+    serverchanturbo: 'Server酱ᵀ',
     serverchan3: 'Server酱³',
     checkchan: 'Check酱¹',
     contact: {

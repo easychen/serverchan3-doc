@@ -1,5 +1,5 @@
 export default {
-    logo: <span>Server酱³ 文档中心</span>,
+    logo: <span>方糖文档中心</span>,
     project: {
       link: 'https://github.com/easychen/serverchan3-doc',
     //   icon: (
@@ -12,17 +12,17 @@ export default {
     footer: {
       content: <span>
       Copy {`${new Date().getFullYear()}`} ©{' '}
-      <a href="https://sc3.ft07.com" target="_blank" rel="noopener noreferrer">
-        Server酱³
+      <a href="https://ft07.com" target="_blank" rel="noopener noreferrer">
+      方糖气球 🎈
       </a>
     </span>,
     },
     head: (
         <>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>Server酱³ · 文档中心</title>
-          <meta property="og:title" content="Server酱³文档中心" />
-          <meta property="og:description" content="如何用好Server酱³" />
+          <title>方糖文档中心</title>
+          <meta property="og:title" content="方糖文档中心" />
+          <meta property="og:description" content="方糖旗下产品的文档中心" />
           <link rel="icon" type="image/png" href="/logo.144.png" />
         </>
       )

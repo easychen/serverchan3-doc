@@ -12,7 +12,7 @@ API地址： `https://<uid>.push.ft07.com/send/<sendkey>.send`。
 1. `uid`亦可从`sendkey`中提取，位于`sctp{uid}t...`处，正则为`/^sctp(\d+)t/`
 1. `API URL` 亦可直接在[SendKey页面](https://sc3.ft07.com/sendkey)复制
 
-![](../../image/20241016133823.png)
+![](../../../image/20241016133823.png)
 
 
 ## 请求参数

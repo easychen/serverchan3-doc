@@ -8,7 +8,7 @@ export default {
     //     </svg>
     //   )
     },
-    docsRepositoryBase: 'https://github.com/easychen/serverchan3-doc',
+    docsRepositoryBase: 'https://github.com/easychen/serverchan3-doc/tree/main',
     footer: {
       content: <span>
       Copy {`${new Date().getFullYear()}`} ©{' '}

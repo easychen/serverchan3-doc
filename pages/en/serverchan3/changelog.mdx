@@ -1,0 +1,28 @@
+# Changelog
+
+## 1.0.15
+
+Optimized message content selection to support multi-line selection; improved settings page layout and order; fixed server connection issues after logout and re-login in certain situations
+
+## 1.0.14
+
+Added unread message count for iOS; added one-click mark all messages as read in settings page
+
+## 1.0.13
+
+Optimized text layout in message list cards (preventing early line breaks for long text), year not shown for current year messages; improved markdown display in list view
+
+## 1.0.9
+
+Added Action Link.
+
+Change 'https' to 'sccallback' in links. When users click, the APP will show a confirmation dialog and display the API response directly through the bottom toast. This enables more convenient API calls.
+
+1. `Method` is `POST`
+1. Dynamic parameters: `{{{sc:user_name}}}` and `{{{sc:user_id}}}`
+
+Example:
+
+```markdown
+[Click to send test](sccallback://*.push.ft07.com?title=test&uid={{{sc:user_id}}}&name={{{sc:user_name}}}  "Confirmation dialog text")
+``` 

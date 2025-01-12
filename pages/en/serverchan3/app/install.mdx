@@ -1,0 +1,60 @@
+import { Callout } from 'nextra/components'
+
+# Installation
+
+## App Store Installation and Manual Installation
+
+Please visit the [official download page](https://sc3.ft07.com/client):
+- If your phone brand has a corresponding app store, you can click the corresponding button to download from the store or search for "ServerChan";
+- If not, you can download the APK directly and install it manually.
+
+<Callout>
+The app store package and the direct download package are exactly the same. Due to review processes, the app store version might be one or two days behind the latest version
+</Callout>
+
+## Configuration
+
+<Callout type="info">
+We recommend using the background resident mode, which supports all Android brands with instant message delivery.
+<br/>Only switch to the no-background mode if you need to save power or if the system keeps killing the background process.
+</Callout>
+
+
+Please enable the following permissions in order:
+
+- [x] Notification permission, especially the "User Private Notifications" permission in "Notification Categories", some phones allow you to specify notification method and sound
+- [x] Notification filter rules: set all as important
+- [x] Background resident/Lock screen protection
+- [x] Auto-start/Auto-background
+- [x] Background pop-up interface
+- [x] App power settings: Unrestricted
+
+You can check the setup help for different brands below:
+
+<Callout>
+The setup help below is in English with screenshots for reference
+</Callout>
+
+- [Huawei](https://dontkillmyapp.com/huawei)
+- [Xiaomi](https://dontkillmyapp.com/xiaomi)
+- [OnePlus](https://dontkillmyapp.com/oneplus)
+- [Samsung](https://dontkillmyapp.com/samsung)
+- [Meizu](https://dontkillmyapp.com/meizu)
+- [OPPO](https://dontkillmyapp.com/oppo)
+- [vivo](https://dontkillmyapp.com/vivo)
+- [RealMe](https://dontkillmyapp.com/realme)
+- [Others](https://dontkillmyapp.com/general)
+
+
+### No-Background Push
+
+When the app is not running in the background, messages can only be received through vendor channels. This app supports the following vendor channels:
+
+- `iOS`: Apple phones
+- `FCM`: Phones supporting Google Push, device registration requires overseas network, most domestic networks can receive pushes
+- `MiPush`: Xiaomi, Redmi series phones
+- `Push Kit`: Huawei phones and tablets, EMUI 3.0 and above, HMS Core 3.0.0 and above
+- `HONOR Push`: Honor phones and tablets, domestic Magic UI 4.0 and above
+- `OPPO Push`: OPPO models supporting ColorOS 3.1 and above, OnePlus 5/5t and above models, all realme models
+- `vivo Push`: vivo, iQOO series phones
+- `Flyme Push`: Meizu phones, Flyme system 

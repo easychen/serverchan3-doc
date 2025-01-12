@@ -1,0 +1,74 @@
+---
+title: Voice Settings
+description: Voice settings and configuration options
+---
+
+# Voice Settings
+
+The application supports both local and cloud-based voice synthesis methods. You can choose the appropriate voice solution based on your needs.
+
+## Local Voice
+
+Local voice uses the device's built-in voice engine and can be used without internet connection.
+
+### Android System Settings
+Before using local voice, please complete the following preparations:
+
+1. Install Chinese TTS and Voice Packages
+
+Typically, your phone system comes with a TTS engine, but it only has one voice, which is not suitable for dialogue scenarios. Therefore, we need to install an additional TTS engine.
+
+   - Go to System Settings
+   - Find Language and Input settings
+   - Check TTS engines, if there's only one, you need to install another TTS engine
+
+2. Recommended voice engines:
+
+   - Xiaomi Voice Engine (can be downloaded from [here](https://www.52pojie.cn/thread-1683594-1-1.html), third-party software, please assess risks yourself)
+   - Google Text-to-Speech Engine (can be downloaded from [Google Play](https://play.google.com/store/apps/details?id=com.google.android.voiceservices))
+
+   * Note: Although Xiaomi Voice Engine can be used offline, it connects to the internet by default for better results. It's free but may incur data charges.
+
+### iOS System
+iOS system comes with Chinese voice engine, no additional setup needed.
+
+### Voice Parameter Settings
+You can adjust the following parameters to achieve the best voice effect:
+
+- Speech Rate: Adjust the speed of voice playback
+- Pitch: Adjust the pitch of the voice
+- Volume: Adjust the volume of the voice
+
+## Cloud Voice
+
+Cloud voice uses AI technology to generate more natural voice effects and requires internet connection.
+
+### Preparation
+1. Fill in API Key in the settings interface
+   - Can use API Key from SiliconFlow.cn, a domestic AI company
+
+2. Enable "Use Cloud TTS" option
+
+### Voice Parameter Settings
+Cloud voice also supports adjusting:
+- Speech Rate
+- Pitch
+- Volume
+
+Note that currently many AI model interfaces don't support these parameters. We adjust them during playback, so they are not supported when exporting audio.
+
+## Character Customization
+
+You can set different voice characteristics and personalized settings for both host and assistant.
+
+### Host/Assistant Settings
+- Set Name: Choose an appropriate name for the role
+- Personality Traits: Customize the character's personality
+- Expression Style: Adjust the tone and style of speech
+
+## Optimization Settings
+
+In the settings interface, you can also enable the following features to optimize voice effects:
+
+- Secondary Polish: Use AI to optimize generated dialogues for more natural flow
+- Auto Translation: Can automatically translate non-Chinese content (if needed) 

@@ -1,0 +1,103 @@
+# Frequently Asked Questions
+
+<details>
+<summary><strong>Is ServerChan³ free? If not, what's the pricing model?</strong></summary>
+
+ServerChan³ includes both push notification service and AI service. Different services have different pricing models:
+
+1. The push notification service is **free during the testing period**. The official version will be charged according to the same pricing as ServerChan<sup>Turbo</sup>(sct.ftqq.com). Subscribers of ServerChan<sup>Turbo</sup> **don't need to pay again**, we will provide a solution to sync the membership period to ServerChan³.
+2. AI-related features (such as summarization and translation) **consume points regardless of testing period** ([pricing details](https://apijia.cn/doc)). New users get free points upon registration, and need to purchase more points when they run out.
+
+</details>
+
+<details>
+<summary><strong>What's the relationship between ServerChan³（sc3.ft07.com）and ServerChan<sup>Turbo</sup>(sct.ftqq.com)?</strong></summary>
+
+- ServerChan³ is a brand new product line focusing on **native client experience**. It currently supports AI summarization, translation, and image reading mode, along with a Tag-based message grouping system.
+- ServerChan<sup>Turbo</sup> focuses on **multi-channel push notifications** primarily through WeChat.
+
+Their users and SendKeys are **not interchangeable**. For the API, except that ServerChan³'s API URL requires adding `uid` in the domain name, most parameters are compatible with ServerChan<sup>Turbo</sup>.
+
+</details>
+
+<details>
+<summary><strong>Can XX software use ServerChan³?</strong></summary>
+Theoretically, only software that has integrated ServerChan³'s API is supported, but we provide a forwarding service from SCT to SC3, which means that theoretically all software supporting SCT can support ServerChan³.
+
+[Click here for detailed information about forwarding](./compatibility/sct-forward).
+
+</details>
+
+<details>
+<summary><strong>Does ServerChan³ support multiple devices? How to manage registered devices?</strong></summary>
+
+ServerChan³ supports multiple devices and by default pushes notifications to all registered devices. You can manage devices (delete, enable/disable push notifications) on the "[Device Management](https://sc3.ft07.com/device)" page of the official website.
+
+![](../../../image/20241103223323.png)
+
+</details>
+
+<details>
+<summary><strong>How to delete messages in ServerChan³? How to delete all messages at once?</strong></summary>
+1. Long press and swipe left on a message to reveal the delete button, tap it again to delete the single message.
+1. Click the menu in the top right corner of the message list page to enter settings. Under "Message Settings", click "Clear All Client + Server Messages"
+
+![](../../../image/20241103223603.png)
+
+</details>
+
+<details>
+<summary><strong>What are "Client Messages" and "Server Messages" in ServerChan³? What's the difference?</strong></summary>
+1. This relates to how ServerChan³ works - messages are first pushed to the server and cached for 72 hours
+1. Then when the client starts or refreshes, it pulls messages from the server and saves them to the local database
+1. The message list page displays messages from the local database, so you can browse historical messages even offline
+1. In settings, "Clear Client Messages Only" allows you to pull messages from the server again after refreshing; while "Clear All Client + Server Messages" also deletes cached messages on the server, making them unavailable to other clients
+
+</details>
+
+<details>
+<summary><strong>How to selectively delete messages in bulk in ServerChan³?</strong></summary>
+1. Star the messages you want to keep.
+1. Click the menu in the top right corner of the message list page to enter settings. Under "Message Settings", click "Clear All Unstarred Messages"
+
+</details>
+
+<details>
+<summary><strong>How to mark all messages as read in ServerChan³?</strong></summary>
+1. Click the menu in the top right corner of the message list page to enter settings. You'll find the "Mark All as Read" button under "Message Settings".
+1. If you don't see this button in your settings page, please upgrade to the [latest version](https://sc3.ft07.com/client).
+</details>
+
+<details>
+<summary><strong>How to add line breaks when pushing messages? Are tables supported? What's the format?</strong></summary>
+1. ServerChan³ uses [flutter_markdown<sup>0.7.4</sup>](https://pub.dev/packages/flutter_markdown) to render Markdown and supports [Markdown syntax](https://daringfireball.net/projects/markdown/), but HTML is not allowed. Format like <a href="..."></a> is HTML and needs to be converted to Markdown format.
+1. Note that in Markdown, you need two line breaks `\n\n` for a new paragraph.
+1. You can send HTML to AI for conversion help.
+
+</details>
+
+<details>
+<summary><strong>How to include images when pushing messages?</strong></summary>
+1. ServerChan³ doesn't support base64 as image URLs. You need to upload the image to get an accessible URL, then use Markdown syntax through the `desp` parameter to push it. Note that other parameters don't support Markdown and are only shown on the message detail page.
+</details>
+
+<details>
+<summary><strong>The `desp` parameter uses Markdown but looks messy on the message card, what should I do?</strong></summary>
+1. You can use the `short` parameter to specify the exact text to display in the content section of the message card.
+1. Please refer to the parameters section in the [API documentation](/serverchan3/server/api).
+</details>
+
+<details>
+<summary><strong>How to delete or edit message Tags?</strong></summary>
+1. Message Tags are automatically aggregated from the tags contained in messages
+1. When all messages containing a certain Tag are deleted, the Tag will disappear
+1. Similarly, because they come from automatic aggregation, Tag names cannot be manually modified
+</details>
+
+
+{/*
+<details>
+<summary><strong></strong></summary>
+</details>
+
+*/} 

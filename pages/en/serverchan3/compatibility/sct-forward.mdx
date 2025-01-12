@@ -1,0 +1,39 @@
+import { Callout } from 'nextra/components'
+
+## Forwarding Service
+
+[ServerChan³](https://sc3.ft07.com/) and [ServerChan<sup>Turbo</sup>](https://sct.ftqq.com/) use different user systems and SendKeys, making them incompatible within the system.
+
+A practical issue is that most applications currently integrate with ServerChan<sup>Turbo</sup>, and although we are actively promoting integration with ServerChan³, this will still take a considerable amount of time.
+
+Therefore, we have set up a **temporary** forwarding system that automatically forwards requests when it detects a SendKey from ServerChan³.
+
+```mermaid
+sequenceDiagram
+    participant User as User
+    participant SctAPI as ServerChan Turbo API
+    participant Sc3API as ServerChan³ API
+    participant Phone as User's Phone
+    
+    User ->> SctAPI: Send push request (with ServerChan³ SendKey)
+    SctAPI ->> Sc3API: Detect SendKey from ServerChan³, forward request
+    Sc3API ->> Phone: Push message to user's phone (includes ads)
+
+```
+<Callout>
+Please note:
+
+1. This forwarding system is temporary and will be discontinued when the ServerChan³ ecosystem matures (maximum three years)
+1. To encourage users and software developers to prioritize using ServerChan³'s official entry point, **content forwarded through this system will include advertisements**
+</Callout>
+
+## Best Practices
+
+To improve your user experience, please:
+
+1. For programs you develop yourself, use the [ServerChan³ official API endpoint](/serverchan3/server/api)
+1. For software and services you are using, please **suggest to the developers** to support [ServerChan³ official API endpoint](/serverchan3/server/api).
+
+<Callout type="info">
+We provide [SDKs](/serverchan3/server/sdk) that **can support both ServerChan<sup>Turbo</sup> and ServerChan³**, making the transition cost very low.
+</Callout> 

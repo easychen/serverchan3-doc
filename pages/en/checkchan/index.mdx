@@ -1,0 +1,241 @@
+# CheckChan¹
+
+**CheckChan is a universal webpage content monitoring tool that can detect changes in webpage content and send notifications to WeChat**
+
+![](../../../image/20220526194209.png)  
+
+## Store Installation
+
+|Microsoft Edge|Google Chrome|
+|-|-|
+|[![](../../../image/20220906224637.png)](https://microsoftedge.microsoft.com/addons/detail/check%E9%85%B1/almpackhamocjhnlbhdbcnlbfidnadji)  |[![](../../../image/20220906224612.png)](https://chrome.google.com/webstore/detail/check%E9%85%B1/deomglgnplnflcbljmehpafdnhdklcep)  |
+
+Click the above icons to enter the store page or directly search for "CheckChan" in the store
+
+## Official Video Tutorial
+
+[![](../../../image/20220531151537.png)](https://www.bilibili.com/video/BV1K94y1m7tt)
+
+[Detailed version, nearly 2 hours](https://www.bilibili.com/video/BV1K94y1m7tt)
+
+## Open Source Statement
+
+⚠️ The browser plugin is not open source. The code in the docker directory is only for security checks and compiling multi-platform images, using GPLv3 license with additional conditions:
+
+1. The default ServerChan channel integration **must not be modified or deleted**.
+1. **Other message channels** must not be integrated and republished.
+1. After meeting the above two conditions, follow the **GPLv3** license.
+
+## Latest Version
+
+- Plugin·Chrome/Edge: 2024.10.05.13.57 [Download](https://github.com/easychen/checkchan-dist/raw/master/ckc.zip)
+- Docker Image (Cloud + Remote Desktop All-in-One): 2024.10.10.17.20 [Docker Hub](https://hub.docker.com/repository/docker/easychen/checkchan)
+- Documentation: 2024.10.11.10.14
+- Update Log: [GitHub](https://github.com/easychen/checkchan-dist/commits/main)
+- Ecosystem: RSSHub Browser Plugin Integration Version ([Source Code](https://github.com/easychen/RSSHub-Radar-with-checkchan) | [Download](https://github.com/easychen/RSSHub-Radar-with-checkchan/releases/download/main/1.7.0.with-checkchan.zip))
+
+> For Docker image installation commands, please refer to the cloud deployment section below
+
+## What is "CheckChan"
+
+![](../../../image/20220521132637.png) 
+
+CheckChan is a webpage content monitoring tool produced by FTQQBalloon, consisting of an Edge/Chrome **browser plugin** and a self-deployable **cloud service**.
+
+Based on the browser plugin, it can theoretically monitor any content (text) on webpages through a **visual selector**. In addition to browser notifications, it can work with [ServerChan](https://sct.ftqq.com) to push changes to WeChat or mobile phones.
+
+![](../../../image/20220521134213.png)  
+
+CheckChan works by opening webpages in the browser plugin background for monitoring, thus **completely simulating real user behavior**. It can monitor most complex dynamic webpages, backend pages requiring login, and (in most cases) automatically maintain login status.
+
+Besides supporting webpage content (Dom) monitoring, it also supports HTTP status (via GET monitoring), JSON, and RSS methods.
+
+![](../../../image/20220521134438.png)  
+
+With the self-deployable **cloud service**, monitoring tasks can be synchronized to the server, allowing tasks to continue running on schedule even when the browser and computer are turned off.
+
+![](../../../image/20220521135441.png)  
+
+## Plugin Installation and Usage
+
+The plugin can be used independently, though scheduled monitoring tasks won't execute when closed.
+
+### Installation
+
+Open Edge's extension page, enable "Developer mode", click "Load Unpacked", and select directory A from the extracted files above.
+
+![](../../../image/20220521140506.png)  
+
+If loaded successfully, you'll see the CheckChan interface. If it fails, it's usually because of an extra directory layer during extraction - try selecting the next level directory under directory A.
+
+### Usage
+
+#### Adding Webpage Monitoring Points
+
+After installing the plugin, open the webpage you want to monitor, right-click on the page, and you'll see the "Locate Monitoring Object" option.
+
+![](../../../image/20220521134213.png) 
+
+Click it to initialize the visual selector.
+
+![](../../../image/20220521145527.png)  
+
+Move your mouse to see highlighted areas, and left-click on the text you want to monitor.
+
+> Note: The selected area must contain text, otherwise it will return empty. Many texts printed on images will also return empty.
+
+![](../../../image/20220521145653.png)  
+
+You'll be redirected to the add page.
+
+![](../../../image/20220521145825.png)  
+
+You can modify the name, set monitoring interval, delay, and maximum retry times. Before saving, it's best to click the 'Test' button next to the 'CSS Selector Path' field to test.
+
+If it prompts "Detection content is empty", there's a problem. Click again to observe:
+
+If you notice the page closes before the favicon appears, increase the "Delay Reading" seconds; if it still returns empty after opening, the automatically generated selector path might be incorrect.
+
+You can switch to the browser's automatically generated path using these steps:
+
+① Right-click on the text to be monitored, select "Inspect"
+
+![](../../../image/20220521150539.png)  
+
+② The developer tools will automatically open and select the corresponding line in the source code. Right-click on the highlighted line, select "Copy" → "Copy selector"
+
+![](../../../image/20220521150708.png)  
+
+③ Paste the copied path into the "CSS Selector Path" field, then click the "Test" button again to test.
+
+After testing successfully, click "Submit" to save the monitoring point.
+
+#### Pushing to WeChat and Other Devices via ServerChan
+
+![](../../../image/20220521224002.png)  
+
+When adding or modifying monitoring points, enter the Sendkey to push messages to ServerChan.
+
+##### How to Get SendKey
+
+Log in to [ServerChan Official Website](https://sct.ftqq.com), go to "[Key&API](https://sct.ftqq.com/sendkey)", and click the "Copy" button.
+
+![](../../../image/20220521224512.png)  
+
+##### How to Push to Other Channels
+
+Log in to [ServerChan Official Website](https://sct.ftqq.com), go to "[Channel Configuration](https://sct.ftqq.com/forward)", select the channel you want to push to, and follow the instructions on the page. Messages can be pushed to "PushDeer" and various group bots.
+
+![](../../../image/20220521224356.png)  
+
+If the above channels don't meet your needs, you can choose the "Custom" channel to send custom HTTP requests. This method is compatible with most notification interfaces.
+
+![](../../../image/20220521225027.png)  
+
+### Importing and Exporting All Monitoring Points
+
+Click the up and down arrows in the top right of the monitoring point list to import and export all monitoring points.
+
+![](../../../image/20220522114033.png)  
+
+### Sharing and Importing Monitoring Points
+
+Click the "Clipboard" in the monitoring point list to export the current monitoring point settings to the clipboard.
+
+![](../../../image/20220522110215.png)  
+
+The exported data looks like this:
+
+```
+checkchan://title=Server%E9%85%B1%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99%E7%8A%B6%E6%80%81&url=https%3A%2F%2Fsct.ftqq.com&type=get&code=200&rss_field=title&delay=3&retry=10
+```
+
+After copying the above characters, paste them with Ctrl+V in the CheckChan browser plugin interface, and it will automatically recognize and jump to the "Add Monitoring Point" interface.
+
+![](../../../image/20220522113944.png) 
+
+### Monitoring Period Limits
+
+Some tasks only need to be executed during specific time periods. To save resources, we've added the "Monitoring Period Limit" feature. For example, if an animation updates every Friday at 10 AM, we can set the "Monitoring Period Limit" as follows:
+
+![](../../../image/20220523213852.png)  
+
+This way, monitoring won't start during other time periods. For tasks with unpredictable time periods, use the default "Every Minute".
+
+Note that above the "Monitoring Period Limit", there's also the "Monitoring Interval Time".
+
+![](../../../image/20220523214048.png)  
+
+If the "Monitoring Period Limit" is set to every minute, and the "Monitoring Interval Time" is 60 minutes, monitoring will be attempted every minute, but once monitoring succeeds, the next monitoring will be 60 minutes later.
+
+Also, since executing monitoring tasks itself takes time, when "Monitoring Interval Time" is 1 minute, tasks usually run every other minute (i.e., every two minutes).
+
+### Selector Extended Syntax
+
+#### Specifying Array Elements with @
+
+The latest version supports a Selector extended syntax: Since it's implemented through `document.querySelectorAll`, it returns all matching elements in an array. When these elements belong to the same parent node, we can use `:nth-of-type(1)` or `:nth-child(1)` to specify an item in the array.
+
+However, if these elements don't belong to the same parent node, the above methods won't work. We've added a selector@n syntax that allows us to specify an element from the array returned by the Selector. For example, `.booklist .item@0` will return `document.querySelectorAll(.booklist .item)[0]`.
+
+> The @ syntax can be used not only on DOM selectors but also to specify RSS monitoring results. By default, RSS will return the first article of the entire Feed. You can specify monitoring the second article (still counting from 0) by adding @1 after the Feed url.
+
+#### Getting Element Attributes with %
+
+The lowest level of the Selector returns an element, but sometimes we need to monitor a certain attribute value of this element, such as monitoring a link's `href`. To solve this, we extended the selector syntax to allow users to get element attributes using element%attribute. For example: `article#post-180 > div > div > p > a%href`. When using `%` and `@` together, `%` should immediately follow the element, like: `article#post-180 > div > div > p > a%href@0`.
+
+### Log Viewing and Error Location
+
+To better understand the execution of scheduled tasks, you can open the "Developer Tools" (F12) and see the task-generated logs in the `Console` tab.
+
+![](../../../image/20220523211235.png)  
+
+Error messages will also be displayed here in red highlighted lines. Providing log error screenshots when encountering bugs can help us locate problems faster.
+
+### Updating Browser Plugin
+
+After being listed in the store, it can be upgraded automatically. Before that, manual upgrade is needed. To upgrade, download the zip package, extract and overwrite the original files, then "reload" in the browser's plugin management panel.
+
+![](../../../image/20220524171157.png)  
+
+## Image Installation and Usage
+
+The new image has integrated cloud and remote desktop versions, allowing both to be used with a single installation.
+
+- Cloud: Working with your self-deployed server, tasks can be synchronized to the cloud for execution, continuing to run even after closing the browser and computer.
+- Remote Desktop: Chrome browser is packaged in Docker, accessible through VNC and web interface just like on a computer.
+
+> ⚠️ Special note: Because the cloud's network and environment differ from local, there's no guarantee that tasks running locally will succeed in the cloud. Some complex webpages and those with many dynamic effects may fail.
+
+### Installation
+
+> Setting up a self-hosted cloud version requires technical knowledge. Non-technical users are recommended to purchase our official cloud version (to be released after internal testing)
+
+Requires Docker environment. If you don't have a cloud server, check out [Tencent Cloud's special price servers for 30~50 yuan first order](https://curl.qcloud.com/VPjlS4gj).
+
+#### One-Click Installation Command
+
+[Click here to enter the tool interface](https://install.ftqq.com/config/checkchan)
+
+![](../../../image/20220818153012.png)  
+
+#### Starting with Docker-compose
+
+Log in to the server (assuming its IP is IPB), create a `data` directory in the installation location and make it writable:
+
+```bash
+mkdir data && chmod 0755 data
+```
+
+Create a `docker-compose.yml` file, adjust and paste the following content:
+
+```yaml
+version: '3'
+services:
+  chrome:
+    image: easychen/checkchan:latest
+    volumes:
+      - "./data:/checkchan/data"
+    environment:
+      - "CKC_PASSWD=<This is the remote desktop password, write one you want>"
+``` 

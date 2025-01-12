@@ -1,0 +1,83 @@
+## Push Service and Common Errors
+
+<details>
+<summary><strong>Question 1: Why am I not receiving push notifications on my phone?</strong></summary>
+Please check the push logs to confirm if there are any error messages. If you need assistance, please provide your sendkey, and we will help investigate.
+</details>
+
+<details>
+<summary><strong>Question 2: Why do I keep getting 429 errors when pushing?</strong></summary>
+This occurs when the IP has exceeded the API call limit within 24 hours. Please stop calling for 24 hours and try again.
+</details>
+
+<details>
+<summary><strong>Question 3: How can I check my membership expiration date?</strong></summary>
+Log in to the subscription management page: https://sct.ftqq.com/subscribe to view your membership status.
+</details>
+
+<details>
+<summary><strong>Question 4: What formats are supported on the push message page?</strong></summary>
+Currently supports Markdown syntax, including tables and images, but HTML tags are not supported.
+</details>
+
+<details>
+<summary><strong>Question 5: How can I monitor multiple devices and receive offline notifications?</strong></summary>
+ServerChan is a notification interface that needs to be used with monitoring tools (like uptimekuma). Configure heartbeat detection and enable ServerChan notifications.
+</details>
+
+<details>
+<summary><strong>Question 6: Why do I get an error when pushing base64 images?</strong></summary>
+ServerChan doesn't support pushing base64 images directly. Please upload to an image hosting service first and use the image URL for pushing.
+</details>
+
+<details>
+<summary><strong>Question 7: How can different push tools use the same DingTalk robot simultaneously?</strong></summary>
+It's recommended to bind different DingTalk robots for each platform, assign them to the same group, and set remarks to distinguish push sources.
+</details>
+
+<details>
+<summary><strong>Question 8: What should I do when there's an error with special characters in the push message title?</strong></summary>
+Please ensure there are no line breaks or other special characters in the title parameter.
+</details>
+
+<details>
+<summary><strong>Question 9: How do I configure DingTalk group to receive pushes?</strong></summary>
+Select DingTalk group in the channel settings page and fill in the DingTalk group's WebHook URL.
+</details>
+
+<details>
+<summary><strong>Question 10: Links in push messages aren't clickable, how can I fix this?</strong></summary>
+Please confirm you're using Markdown syntax for links. HTML format links are not supported.
+</details>
+
+<details>
+<summary><strong>Question 11: Why do image pushes fail?</strong></summary>
+ServerChan doesn't support pushing base64 format images directly. It's recommended to upload images to an image hosting service and use the URL for pushing.
+</details>
+
+## Account and Subscription Management
+
+<details>
+<summary><strong>Question 1: How can I check my membership expiration date?</strong></summary>
+You can view your membership status and expiration date by visiting the subscription management page: https://sct.ftqq.com/subscribe.
+</details>
+
+<details>
+<summary><strong>Question 2: What should I do if my membership isn't active after purchase?</strong></summary>
+If your membership hasn't been activated, please provide your WeChat order number and contact ServerChan customer service for assistance.
+</details>
+
+<details>
+<summary><strong>Question 3: Will membership auto-renew after expiration?</strong></summary>
+Auto-renewal is not supported; users need to make manual payments.
+</details>
+
+<details>
+<summary><strong>Question 4: Can I change the bound WeChat account?</strong></summary>
+Direct WeChat account changes are not currently supported. Please contact customer service if you need to change.
+</details>
+
+<details>
+<summary><strong>Question 5: Is the information on the subscription page updated in real-time?</strong></summary>
+Yes, the status information on the subscription page is updated in real-time, and you can check the latest data at any time. You can also click the "Refresh button".
+</details> 

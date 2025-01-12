@@ -8,6 +8,10 @@ export default {
     //     </svg>
     //   )
     },
+    i18n: [
+      { locale: 'zh', name: '简体中文' },
+      { locale: 'en', name: 'English' },
+    ],
     docsRepositoryBase: 'https://github.com/easychen/serverchan3-doc/tree/main',
     footer: {
       content: <span>

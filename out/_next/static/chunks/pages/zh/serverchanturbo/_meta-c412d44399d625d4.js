@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[2205],{8669:function(n,u,_){(window.__NEXT_P=window.__NEXT_P||[]).push(["/zh/serverchanturbo/_meta",function(){return _(83390)}])},83390:function(n,u,_){"use strict";_.r(u),_.d(u,{__N_SSG:function(){return t}});var t=!0;u.default=()=>null}},function(n){n.O(0,[2888,9774,179],function(){return n(n.s=8669)}),_N_E=n.O()}]);
